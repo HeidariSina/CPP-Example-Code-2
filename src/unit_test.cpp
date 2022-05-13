@@ -27,23 +27,23 @@ TEST(HW5Test, TEST2)
     Water water{2};
 }
 
-// TEST(HW5Test, TEST3)
-// {
-//     Cinnamon cinnamon{1};
-//     Sugar sugar{2};
-//     Cookie cookie{1};
-//     Water water{2};
+TEST(HW5Test, TEST3)
+{
+    Cinnamon cinnamon{1};
+    Sugar sugar{2};
+    Cookie cookie{1};
+    Water water{2};
 
-//     Ingredient *ingredient;
-//     ingredient = &cinnamon;
-//     EXPECT_EQ(ingredient->get_name(), "Cinnamon");
-//     ingredient = &sugar;
-//     EXPECT_EQ(ingredient->get_name(), "Sugar");
-//     ingredient = &cookie;
-//     EXPECT_EQ(ingredient->get_name(), "Cookie");
-//     ingredient = &water;
-//     EXPECT_EQ(ingredient->get_name(), "Water");
-// }
+    Ingredient *ingredient;
+    ingredient = &cinnamon;
+    EXPECT_EQ(ingredient->get_name(), "Cinnamon");
+    ingredient = &sugar;
+    EXPECT_EQ(ingredient->get_name(), "Sugar");
+    ingredient = &cookie;
+    EXPECT_EQ(ingredient->get_name(), "Cookie");
+    ingredient = &water;
+    EXPECT_EQ(ingredient->get_name(), "Water");
+}
 
 // TEST(HW5Test, TEST4)
 // {
