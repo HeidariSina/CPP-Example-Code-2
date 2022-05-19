@@ -4,10 +4,11 @@
 // constructor
 Cappuccino::Cappuccino() : EspressoBased()
 {
-    this->name = "Cappuccino";
-    this->ingredients.push_back(new Espresso{2});
-    this->ingredients.push_back(new Milk{2});
-    this->ingredients.push_back(new MilkFoam{1});
+    name = "Cappuccino";
+    ingredients.push_back(new Espresso{2});
+    ingredients.push_back(new Milk{2});
+    ingredients.push_back(new MilkFoam{1});
+    side_items = {};
 }
 
 // copy
@@ -21,8 +22,11 @@ Cappuccino::Cappuccino(const Cappuccino &cap)
 // deconstructor
 Cappuccino::~Cappuccino()
 {
-    // for (const auto &i : side_items)
-    //     delete i;
+    for (auto &i : side_items)
+    {
+        i = nullptr;
+        delete i;
+    }
     side_items.clear();
 }
 

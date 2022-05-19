@@ -4,8 +4,11 @@
 // destructor
 EspressoBased::~EspressoBased()
 {
-    // for (const auto &i : ingredients)
-    //     delete i;
+    for (auto &i : ingredients)
+    {
+        i = nullptr;
+        delete i;
+    }
     ingredients.clear();
 }
 
