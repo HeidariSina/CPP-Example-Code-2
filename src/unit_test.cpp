@@ -45,24 +45,24 @@ TEST(HW5Test, TEST3)
     EXPECT_EQ(ingredient->get_name(), "Water");
 }
 
-// TEST(HW5Test, TEST4)
-// {
-//     Cappuccino cappuccino{};
-//     EXPECT_EQ(cappuccino.get_name(), "Cappuccino");
-//     auto ingredients = cappuccino.get_ingredients();
+TEST(HW5Test, TEST4)
+{
+    Cappuccino cappuccino{};
+    EXPECT_EQ(cappuccino.get_name(), "Cappuccino");
+    auto ingredients = cappuccino.get_ingredients();
 
-//     EXPECT_EQ(ingredients.size(), 3);
-//     for (const auto &i : ingredients)
-//         EXPECT_TRUE(i->get_name() == "Espresso" || i->get_name() == "Milk" || i->get_name() == "MilkFoam");
-// }
+    EXPECT_EQ(ingredients.size(), 3);
+    for (const auto &i : ingredients)
+        EXPECT_TRUE(i->get_name() == "Espresso" || i->get_name() == "Milk" || i->get_name() == "MilkFoam");
+}
 
-// TEST(HW5Test, TEST5)
-// {
-//     Cappuccino cappuccino{};
-//     EXPECT_DOUBLE_EQ(cappuccino.price(), 55);
-//     cappuccino.add_side_item(new Cinnamon{1});
-//     EXPECT_DOUBLE_EQ(cappuccino.price(), 60);
-// }
+TEST(HW5Test, TEST5)
+{
+    Cappuccino cappuccino{};
+    EXPECT_DOUBLE_EQ(cappuccino.price(), 55);
+    cappuccino.add_side_item(new Cinnamon{1});
+    EXPECT_DOUBLE_EQ(cappuccino.price(), 60);
+}
 
 // TEST(HW5Test, TEST6)
 // {
@@ -72,34 +72,34 @@ TEST(HW5Test, TEST3)
 //     EXPECT_EQ(sides.size(), 1);
 //     delete esp;
 //     EXPECT_EQ(sides.size(), 0);
-// }
+//}
 
-// TEST(HW5Test, TEST7)
-// {
-//     Cappuccino cappuccino;
-//     cappuccino.add_side_item(new Chocolate{2});
-//     Cappuccino copy{cappuccino};
-//     EXPECT_EQ(copy.get_name(), "Cappuccino");
-//     EXPECT_DOUBLE_EQ(copy.price(), 65);
-// }
+TEST(HW5Test, TEST7)
+{
+    Cappuccino cappuccino;
+    cappuccino.add_side_item(new Chocolate{2});
+    Cappuccino copy{cappuccino};
+    EXPECT_EQ(copy.get_name(), "Cappuccino");
+    EXPECT_DOUBLE_EQ(copy.price(), 65);
+}
 
-// TEST(HW5Test, TEST8)
-// {
-//     Cappuccino cappuccino;
-//     cappuccino.add_side_item(new Water{1});
-//     Cappuccino equal;
-//     equal.add_side_item(new Sugar{1});
-//     equal = cappuccino;
-//     EXPECT_EQ(equal.price(), 56);
-// }
+TEST(HW5Test, TEST8)
+{
+    Cappuccino cappuccino;
+    cappuccino.add_side_item(new Water{1});
+    Cappuccino equal;
+    equal.add_side_item(new Sugar{1});
+    equal = cappuccino;
+    EXPECT_EQ(equal.price(), 56);
+}
 
-// TEST(HW5Test, TEST9)
-// {
-//     Cappuccino equal;
-//     equal.add_side_item(new Sugar{2});
-//     equal = equal;
-//     EXPECT_EQ(equal.price(), 57);
-// }
+TEST(HW5Test, TEST9)
+{
+    Cappuccino equal;
+    equal.add_side_item(new Sugar{2});
+    equal = equal;
+    EXPECT_EQ(equal.price(), 57);
+}
 
 // TEST(HW5Test, TEST10)
 // {

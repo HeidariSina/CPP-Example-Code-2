@@ -1,10 +1,11 @@
 #include "espresso_based.h"
+#include <iostream>
 
 // destructor
 EspressoBased::~EspressoBased()
 {
-    for (const auto &i : ingredients)
-        delete i;
+    // for (const auto &i : ingredients)
+    //     delete i;
     ingredients.clear();
 }
 
@@ -15,7 +16,10 @@ std::vector<Ingredient *> &EspressoBased::get_ingredients()
 }
 
 // constructor
-EspressoBased::EspressoBased() : ingredients{} {};
+EspressoBased::EspressoBased()
+{
+    ingredients = {};
+}
 
 // copy
 EspressoBased::EspressoBased(const EspressoBased &esp) : ingredients{esp.ingredients}, name{esp.name} {};
