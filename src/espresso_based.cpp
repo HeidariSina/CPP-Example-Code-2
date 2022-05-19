@@ -1,19 +1,28 @@
 #include "espresso_based.h"
 
+// destructor
 EspressoBased::~EspressoBased()
 {
     for (const auto &i : ingredients)
         delete i;
     ingredients.clear();
 }
-double EspressoBased::price()
+
+// get ingredients
+std::vector<Ingredient *> &EspressoBased::get_ingredients()
 {
-    double money{0};
-    for (auto &i : ingredients)
-        money = money + i->price();
-    return money;
+    return ingredients;
 }
-std::string EspressoBased::get_name()
+
+// constructor
+EspressoBased::EspressoBased() : ingredients{} {};
+
+// copy
+EspressoBased::EspressoBased(const EspressoBased &esp) : ingredients{esp.ingredients}, name{esp.name} {};
+
+// op =
+void EspressoBased::operator=(const EspressoBased &esp)
 {
-    return name;
+    ingredients = esp.ingredients;
+    name = esp.name;
 }
