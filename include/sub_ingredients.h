@@ -22,6 +22,7 @@ DEFCLASS(Espresso, 15);
 DEFCLASS(Milk, 10);
 DEFCLASS(MilkFoam, 5);
 DEFCLASS(Water, 1);
+
 // class Cinnamon : public Ingredient
 // {
 // public:

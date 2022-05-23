@@ -12,11 +12,30 @@ Cappuccino::Cappuccino() : EspressoBased()
 }
 
 // copy
-Cappuccino::Cappuccino(const Cappuccino &cap)
+Cappuccino::Cappuccino(const Cappuccino &cap) : EspressoBased(cap)
 {
-    name = cap.name;
-    ingredients = cap.ingredients;
-    side_items = cap.side_items;
+    side_items.clear();
+    for (const auto i : cap.side_items)
+    {
+        auto name = i->get_name();
+        auto unit = i->get_units();
+        if (name == "Cinnamon")
+            side_items.push_back(new Cinnamon{unit});
+        if (name == "Chocolate")
+            side_items.push_back(new Chocolate{unit});
+        if (name == "Sugar")
+            side_items.push_back(new Sugar{unit});
+        if (name == "Cookie")
+            side_items.push_back(new Cookie{unit});
+        if (name == "Espresso")
+            side_items.push_back(new Espresso{unit});
+        if (name == "Milk")
+            side_items.push_back(new Milk{unit});
+        if (name == "MilkFoam")
+            side_items.push_back(new MilkFoam{unit});
+        if (name == "Water")
+            side_items.push_back(new Water{unit});
+    }
 }
 
 // destructor
