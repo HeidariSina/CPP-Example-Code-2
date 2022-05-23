@@ -2,6 +2,10 @@
 #include "sub_ingredients.h"
 #include <iostream>
 #include <iomanip>
+// #include <ftxui/dom/elements.hpp>
+// #include <ftxui/screen/screen.hpp>
+// #include "ftxui/dom/node.hpp"     // for Render
+// #include "ftxui/screen/color.hpp" // for ftxui
 
 // constructor
 EspressoBased::EspressoBased() : ingredients{}, name{} {}
@@ -81,6 +85,42 @@ void EspressoBased::operator=(const EspressoBased &esp)
 // Brew
 void EspressoBased::brew()
 {
+    // auto Tname = name;
+    // auto document = ftxui::dbox({
+    //     ftxui::vbox({
+
+    //         ftxui::text(Tname + ":") | ftxui::center | ftxui::border,
+
+    //     }) | ftxui::border,
+
+    // });
+    // auto screen = ftxui::Screen::Create(ftxui::Dimension::Full(), ftxui::Dimension::Fit(document));
+    // ftxui::Render(screen, document);
+
+    // screen.Print();
+    // using namespace ftxui;
+    // using namespace std::chrono_literals;
+
+    // std::string reset_position;
+    // for (float percentage = 0.0f; percentage <= 1.0f; percentage += 0.002f)
+    // {
+    //     std::string data_downloaded =
+    //         std::to_string(int(percentage * 5000)) + "/5000";
+    //     auto document = hbox({
+    //         text("downloading:"),
+    //         gauge(percentage) | flex,
+    //         text(" " + data_downloaded),
+    //     });
+    //     auto screen = Screen(100, 1);
+    //     Render(screen, document);
+    //     std::cout << reset_position;
+    //     screen.Print();
+    //     reset_position = screen.ResetPosition();
+
+    //     std::this_thread::sleep_for(0.01s);
+    // }
+    // std::cout << std::endl;
+
     auto len = name.length();
     int j{0}, k{0};
     int i = 20;
