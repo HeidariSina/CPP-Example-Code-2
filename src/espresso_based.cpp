@@ -1,6 +1,7 @@
 #include "espresso_based.h"
 #include "sub_ingredients.h"
 #include <iostream>
+#include <iomanip>
 
 // constructor
 EspressoBased::EspressoBased() : ingredients{} {}
@@ -52,4 +53,56 @@ void EspressoBased::operator=(const EspressoBased &esp)
 {
     ingredients = esp.ingredients;
     name = esp.name;
+}
+// Brew
+void EspressoBased::brew()
+{
+    auto len = name.length();
+    int j{0}, k{0};
+    int i = 20;
+    if ((i - len) % 2 == 0)
+    {
+        j = (i - len - 2) / 2;
+        k = j;
+    }
+    else
+    {
+        j = (i - len - 2) / 2;
+        k = j + 1;
+    }
+    std::cout << " ------------------ " << std::endl;
+    std::cout << "|                  |" << std::endl;
+    std::cout << "|";
+    for (; j > 0; j--)
+        std::cout << " ";
+    std::cout << name;
+    for (; k > 0; k--)
+        std::cout << " ";
+    std::cout << "|" << std::endl;
+    std::cout << "|                  |" << std::endl;
+    std::cout << "--------------------" << std::endl;
+    for (const auto nn : ingredients)
+    {
+        auto len = nn->get_name().length();
+        if ((i - len) % 2 == 0)
+        {
+            j = (i - len - 2) / 2;
+            k = j;
+        }
+        else
+        {
+            j = (i - len - 2) / 2;
+            k = j + 1;
+        }
+        std::cout << "|                  |" << std::endl;
+        std::cout << "|";
+        for (; j > 0; j--)
+            std::cout << " ";
+        std::cout << nn->get_name();
+        for (; k > 0; k--)
+            std::cout << " ";
+        std::cout << "|" << std::endl;
+        std::cout << "|                  |" << std::endl;
+    }
+    std::cout << " ------------------ " << std::endl;
 }
