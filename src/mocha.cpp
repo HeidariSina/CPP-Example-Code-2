@@ -20,7 +20,7 @@ Mocha::Mocha(const Mocha &cap)
     side_items = cap.side_items;
 }
 
-// deconstructor
+// destructor
 Mocha::~Mocha()
 {
     for (auto &i : side_items)

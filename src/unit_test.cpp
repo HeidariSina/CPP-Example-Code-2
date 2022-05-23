@@ -64,15 +64,15 @@ TEST(HW5Test, TEST5)
     EXPECT_DOUBLE_EQ(cappuccino.price(), 60);
 }
 
-// TEST(HW5Test, TEST6)
-// {
-//     EspressoBased *esp{new Cappuccino{}};
-//     reinterpret_cast<Cappuccino *>(esp)->add_side_item(new Cookie{1});
-//     std::vector<Ingredient *> &sides = reinterpret_cast<Cappuccino *>(esp)->get_side_items();
-//     EXPECT_EQ(sides.size(), 1);
-//     delete esp;
-//     EXPECT_EQ(sides.size(), 0);
-// }
+TEST(HW5Test, TEST6)
+{
+    EspressoBased *esp{new Cappuccino{}};
+    reinterpret_cast<Cappuccino *>(esp)->add_side_item(new Cookie{1});
+    std::vector<Ingredient *> &sides = reinterpret_cast<Cappuccino *>(esp)->get_side_items();
+    EXPECT_EQ(sides.size(), 1);
+    delete esp;
+    EXPECT_EQ(sides.size(), 0);
+}
 
 TEST(HW5Test, TEST7)
 {

@@ -4,11 +4,11 @@
 // constructor
 Cappuccino::Cappuccino() : EspressoBased()
 {
-    name = "Cappuccino";
     ingredients.push_back(new Espresso{2});
     ingredients.push_back(new Milk{2});
     ingredients.push_back(new MilkFoam{1});
     side_items = {};
+    name = "Cappuccino";
 }
 
 // copy
@@ -19,7 +19,7 @@ Cappuccino::Cappuccino(const Cappuccino &cap)
     side_items = cap.side_items;
 }
 
-// deconstructor
+// destructor
 Cappuccino::~Cappuccino()
 {
     for (auto &i : side_items)
@@ -27,6 +27,7 @@ Cappuccino::~Cappuccino()
         i = nullptr;
         delete i;
     }
+
     side_items.clear();
 }
 

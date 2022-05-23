@@ -5,6 +5,7 @@
 #include <string>
 #include "espresso_based.h"
 #include "sub_ingredients.h"
+#include "ingredient.h"
 
 class Cappuccino : public EspressoBased
 {

@@ -1,6 +1,15 @@
 #include "espresso_based.h"
 #include <iostream>
 
+// constructor
+EspressoBased::EspressoBased() : ingredients{} {}
+
+// copy
+EspressoBased::EspressoBased(const EspressoBased &esp)
+{
+    ingredients = esp.ingredients;
+    name = esp.name;
+};
 // destructor
 EspressoBased::~EspressoBased()
 {
@@ -11,22 +20,11 @@ EspressoBased::~EspressoBased()
     }
     ingredients.clear();
 }
-
 // get ingredients
 std::vector<Ingredient *> &EspressoBased::get_ingredients()
 {
     return ingredients;
 }
-
-// constructor
-EspressoBased::EspressoBased()
-{
-    ingredients = {};
-}
-
-// copy
-EspressoBased::EspressoBased(const EspressoBased &esp) : ingredients{esp.ingredients}, name{esp.name} {};
-
 // op =
 void EspressoBased::operator=(const EspressoBased &esp)
 {
